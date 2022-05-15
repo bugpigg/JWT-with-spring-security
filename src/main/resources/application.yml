@@ -1,0 +1,25 @@
+# active profile
+spring:
+  profiles:
+    active: dev-h2
+    include: jwt
+---
+# dev-h2
+spring:
+  config:
+    activate:
+      on-profile: dev-h2
+  datasource:
+    url: jdbc:h2:mem:game;mode=MYSQL;
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  h2:
+    console:
+      enabled: true
