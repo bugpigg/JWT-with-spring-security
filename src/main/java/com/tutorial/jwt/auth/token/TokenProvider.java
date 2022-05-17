@@ -1,6 +1,6 @@
-package com.tutorial.jwt.token;
+package com.tutorial.jwt.auth.token;
 
-import static com.tutorial.jwt.token.TokenSet.AUTHORITIES_KEY;
+import static com.tutorial.jwt.auth.token.TokenSet.AUTHORITIES_KEY;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -12,7 +12,6 @@ import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Date;
 import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

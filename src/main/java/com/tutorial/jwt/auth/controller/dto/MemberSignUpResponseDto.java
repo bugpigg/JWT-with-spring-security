@@ -1,6 +1,6 @@
-package com.tutorial.jwt.controller.dto;
+package com.tutorial.jwt.auth.controller.dto;
 
-import com.tutorial.jwt.domain.Member;
+import com.tutorial.jwt.auth.domain.Member;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

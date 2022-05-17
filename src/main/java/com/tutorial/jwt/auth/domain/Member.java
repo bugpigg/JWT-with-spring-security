@@ -1,4 +1,4 @@
-package com.tutorial.jwt.domain;
+package com.tutorial.jwt.auth.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,6 +23,7 @@ public class Member {
     @Column(unique = true, nullable = false)
     private String userName;
 
+    @Column(nullable = false)
     private String password;
 
     private String email;

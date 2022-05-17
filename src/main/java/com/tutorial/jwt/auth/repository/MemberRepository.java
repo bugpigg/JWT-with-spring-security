@@ -1,6 +1,6 @@
-package com.tutorial.jwt.repository;
+package com.tutorial.jwt.auth.repository;
 
-import com.tutorial.jwt.domain.Member;
+import com.tutorial.jwt.auth.domain.Member;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

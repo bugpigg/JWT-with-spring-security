@@ -1,4 +1,4 @@
-package com.tutorial.jwt.domain;
+package com.tutorial.jwt.auth.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

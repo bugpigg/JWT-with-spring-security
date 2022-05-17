@@ -1,4 +1,4 @@
-package com.tutorial.jwt.domain;
+package com.tutorial.jwt.auth.domain;
 
 public enum Role {
 

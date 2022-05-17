@@ -1,6 +1,7 @@
-package com.tutorial.jwt.token.util;
+package com.tutorial.jwt.auth.util;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class HeaderParser {
     private final static String HEADER_AUTHORIZATION = "Authorization";
@@ -18,5 +19,10 @@ public class HeaderParser {
         }
 
         return null;
+    }
+
+    public static void setAccessTokenInHeader(HttpServletResponse response,
+        String accessToken) {
+        response.setHeader(HEADER_AUTHORIZATION, TOKEN_PREFIX + accessToken);
     }
 }

@@ -1,8 +1,8 @@
-package com.tutorial.jwt.config;
+package com.tutorial.jwt.auth.config;
 
-import com.tutorial.jwt.token.TokenProvider;
-import com.tutorial.jwt.token.exception.JwtAccessDeniedHandler;
-import com.tutorial.jwt.token.exception.JwtAuthenticationEntryPoint;
+import com.tutorial.jwt.auth.token.TokenProvider;
+import com.tutorial.jwt.auth.token.exception.JwtAccessDeniedHandler;
+import com.tutorial.jwt.auth.token.exception.JwtAuthenticationEntryPoint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -29,6 +29,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
             .csrf().disable()
+            .formLogin().disable()
+            .httpBasic().disable()
 
             .exceptionHandling()
                 .authenticationEntryPoint(jwtAuthenticationEntryPoint)
@@ -45,8 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
             .and()
                 .authorizeRequests()
-                    .antMatchers("/auth/**", "/", "/css/**", "/images/**",
-                        "/js/**", "/h2-console/**").permitAll()
+                    .antMatchers("/","/auth/**","/h2-console/**").permitAll()
                     .anyRequest().authenticated()
 
             .and()

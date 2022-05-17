@@ -1,14 +1,18 @@
-package com.tutorial.jwt.controller.dto;
+package com.tutorial.jwt.auth.controller.dto;
 
 
-import com.tutorial.jwt.domain.Member;
-import com.tutorial.jwt.domain.Role;
+import com.tutorial.jwt.auth.domain.Member;
+import com.tutorial.jwt.auth.domain.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+@ToString
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberSignUpRequestDto {

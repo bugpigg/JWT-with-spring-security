@@ -1,4 +1,4 @@
-package com.tutorial.jwt.token.exception;
+package com.tutorial.jwt.auth.token.exception;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

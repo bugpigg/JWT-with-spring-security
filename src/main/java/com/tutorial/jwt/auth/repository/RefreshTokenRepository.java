@@ -1,6 +1,6 @@
-package com.tutorial.jwt.repository;
+package com.tutorial.jwt.auth.repository;
 
-import com.tutorial.jwt.domain.RefreshToken;
+import com.tutorial.jwt.auth.domain.RefreshToken;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

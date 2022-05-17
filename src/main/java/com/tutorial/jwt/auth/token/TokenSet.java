@@ -1,4 +1,4 @@
-package com.tutorial.jwt.token;
+package com.tutorial.jwt.auth.token;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -17,20 +17,23 @@ import org.springframework.security.core.GrantedAuthority;
 public class TokenSet {
 
     public static final String AUTHORITIES_KEY = "role";
-    public static final String BEARER_TYPE = "bearer";
+    public static final String BEARER_TYPE = "Bearer";
 
     private final Key key;
 
     private final Date accessTokenExpiresIn;
+    private final long refreshTokenExpiresTime;
     private final String accessToken;
+
     private final String refreshToken;
 
-    TokenSet(Key key, Authentication authentication, long accessExpireTime, long refreshExpireDate
+    TokenSet(Key key, Authentication authentication, long accessExpireTime, long refreshExpireTime
     ) {
         this.key = key;
         this.accessTokenExpiresIn = getExpireTime(accessExpireTime);
+        this.refreshTokenExpiresTime = refreshExpireTime;
         this.accessToken = createToken(authentication, this.accessTokenExpiresIn);
-        this.refreshToken = createToken(getExpireTime(refreshExpireDate));
+        this.refreshToken = createToken(getExpireTime(refreshTokenExpiresTime));
     }
 
     private Date getExpireTime(long expireTime) {

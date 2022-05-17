@@ -1,11 +1,15 @@
-package com.tutorial.jwt.controller.dto;
+package com.tutorial.jwt.auth.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 
 @Getter
+@Setter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberLoginRequestDto {

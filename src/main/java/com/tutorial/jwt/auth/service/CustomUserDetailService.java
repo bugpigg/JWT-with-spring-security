@@ -1,7 +1,7 @@
-package com.tutorial.jwt.service;
+package com.tutorial.jwt.auth.service;
 
-import com.tutorial.jwt.domain.Member;
-import com.tutorial.jwt.repository.MemberRepository;
+import com.tutorial.jwt.auth.domain.Member;
+import com.tutorial.jwt.auth.repository.MemberRepository;
 import java.util.Collections;
 import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -31,10 +31,9 @@ public class CustomUserDetailService implements UserDetailsService {
         GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(member.getRole());
 
         return new User(
-            String.valueOf(member.getId()),
+            String.valueOf(member.getUserName()),
             member.getPassword(),
             Collections.singleton(grantedAuthority)
         );
     }
-
 }

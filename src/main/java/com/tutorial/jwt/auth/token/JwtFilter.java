@@ -1,6 +1,6 @@
-package com.tutorial.jwt.token;
+package com.tutorial.jwt.auth.token;
 
-import com.tutorial.jwt.token.util.HeaderParser;
+import com.tutorial.jwt.auth.util.HeaderParser;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
